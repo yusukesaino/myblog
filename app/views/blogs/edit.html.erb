@@ -1,0 +1,6 @@
+<div class = "comment">
+  <%= form_tag("/blogs/#{@blog.id}", method: :patch) do %>
+    <textarea name = "text" placeholder = "編集" row = "10" cols = "30"><%= @blog.text %></textarea>
+    <input type = "submit" value = "送信">
+  <% end %>  
+</div>

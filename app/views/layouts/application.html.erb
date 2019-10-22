@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myblog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Unica+One::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div class = "header">
+      <h1><a href = "/blogs">Blog</a></h1>
+        <% if user_signed_in? %>
+          <span>
+            <div class = "nickname">
+              <%= current_user.nickname %>
+            </div>
+            <ul>
+              <li><a href="/users/<%= current_user.id %>">マイページ</a></li>
+              <li><%= link_to "SingOut", destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to "New", new_blog_path %></li>
+            </ul>
+          </span>
+        <% else %>
+          <ul>
+            <li><%= link_to "SignIn", new_user_session_path %></li>
+            <li><%= link_to "Registration", new_user_registration_path %></li>
+          </ul>
+        <% end %>
+    </div>
+    
+    <div class = "main">
+      <%= yield %>
+
+    </div>
+    
+  </body>
+</html>

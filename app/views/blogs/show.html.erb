@@ -1,0 +1,34 @@
+<div class="article">
+  <p><%= simple_format(@blog.text) %></p>
+      <div class = "buttons">
+        <%= link_to "SHOW", "/blogs/#{@blog.id}", class: "button", method: :get  %>
+        <% if user_signed_in? && current_user.id == @blog.user_id%>
+          <%= link_to 'EDIT', "/blogs/#{@blog.id}/edit", class: "button", method: :get %>
+        <% end %>
+        <% if user_signed_in? && current_user.id == @blog.user_id%>
+          <%= link_to "DESTROY", "/blogs/#{@blog.id}", class: "button", method: :delete %>
+        <% end %>
+        <%= link_to "投稿者  #{blog.user.nickname}", class: "user", "/blogs/#{}" %>
+      </div>
+</div>
+
+<div class = "comment">
+  <% if current_user %>
+    <%= form_tag("/blogs/#{@blog.id}/comments", method: :post) do %>
+      <textarea name = "text" placeholder = "コメントする" row = "10" cols = "30"></textarea>
+      <input type = "submit" value = "送信">
+    <% end %>  
+  <% end %>
+</div>
+
+<h4>＜コメント一覧＞</h4>
+<div class="comments"> 
+  <% if @comments %>
+    <% @comments.each do |comment| %>
+      <p>
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+        <%= comment.text %>
+      </p>
+    <% end %>
+  <% end %>
+</div>

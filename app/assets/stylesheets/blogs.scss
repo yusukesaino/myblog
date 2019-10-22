@@ -1,0 +1,146 @@
+.header {
+  height: 100px;
+  background-color: #00c7a6;
+  display: flex;
+}
+.header ul {
+  display: flex;
+  justify-content: center;
+}
+.header a {
+  text-decoration: none;
+  color: white;
+}
+.header li {
+  list-style: none;
+  line-height: 100px;
+  margin: 0 30px;
+}
+h1 {
+  color: white;
+  line-height: 100px;
+  margin: 0 950px 0 30px;
+}
+.main {
+  height: calc(100vh - 100px);
+}
+.article { 
+  width: 800px;
+  max-height: 200px;
+  margin: 30px 100px 30px 150px;
+  border-radius: 5px;
+  box-shadow: 5px 5px gray;
+  border: solid 1px;
+}
+.user {
+  margin: 30px 20px 10px 120px;
+  color: black;
+}
+.buttons { 
+  display: flex;
+  justify-content: left;
+}
+.button { 
+  height: 40px;
+  max-width: 200px;
+  padding: 10px;
+  margin: 20px 20px 10px 5px;
+  background-color: #00c7a6;
+  color: white;
+  text-decoration: none;
+  
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  font-weight: bold;
+  background-image: linear-gradient(45deg, #709dff 0%, #b0c9ff 100%);
+  transition: .4s;
+}
+.button:hover {
+  background-image: linear-gradient(45deg, #709dff 50%, #b0c9ff 100%);
+}
+
+.comment textarea{
+  width: 700px;
+  max-height: 200px;
+  margin: 10px 0 10px 200px;
+  box-shadow: 5px 5px gray;
+  border: solid 1px;
+  display: block;
+}
+.comment input {
+  width: 80px;
+  height: 50px;
+  color: white;
+  background-color: #00c7a6;
+  margin: 10px 0 0 200px;
+}
+.btn {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  color: white;
+  background-color: #00c7a6;
+  margin: 50px;
+  border-radius: 5px;
+  padding: 5px 0 5px 15px;
+}
+h3 {
+  margin: 50px 0 30px 50px;
+}
+h2 {
+  margin: 0 0 0 700px;
+}
+.field-box {
+  margin: 50px 250px 50px 400px;
+  border: solid 2px;
+  padding: 10px;
+  box-shadow: 5px 5px gray;
+  border-radius: 5px;
+}
+.field-text {
+  border: solid 1px;
+  border-radius: 5px;
+}
+.actions {
+  background-color: #00c7a6;
+  margin: 10px 690px 10px 5px;
+  border: solid 1px;
+  border-radius: 5px;
+}
+.login {
+  margin: 10px 950px 10px 400px;
+  padding: 5px;
+  border: solid 1px;
+  border-radius: 5px;
+}
+.signup {
+  margin: 10px 800px 10px 400px;
+  padding: 5px;
+  border: solid 1px;
+  border-radius: 5px;
+}
+.nickname {
+  color: white;
+  margin: 5px 5px 0 30px;
+  font-size: 20px;
+}
+.mypage {
+  margin: 3px 0 0 400px;
+  font-size: 20px;
+}
+.paginate {
+  margin: 0 0 0 400px;
+}
+.back {
+  margin: 0 0 0 50px;
+}
+h4 {
+  margin: 10px 0 10px 200px;
+}
+.comments {
+  max-height: 200px;
+  width: 700px;
+  border: solid 1px;
+  margin: 0 0 0 200px;
+}

@@ -1,0 +1,18 @@
+<% @blogs.each do |blog| %>
+    <div class="article">
+        <p><%= simple_format(blog.text) %></p>
+        <div class = "buttons">
+            <%= link_to "SHOW", "/blogs/#{blog.id}", class: "button", method: :get  %>
+            <% if user_signed_in? && current_user.id == blog.user_id%>
+            <%= link_to 'EDIT', "/blogs/#{blog.id}/edit", class: "button", method: :get %>
+            <% end %>
+            <% if user_signed_in? && current_user.id == blog.user_id%>
+            <%= link_to "DESTROY", "/blogs/#{blog.id}", class: "button", method: :delete %>
+            <% end %>
+            <%= link_to "投稿者  #{blog.user.nickname}", class: "user", "/blogs/#{blog.user_id}" %>
+        </div>
+    </div>
+<% end %>
+<div class = "paginate">
+<%= paginate(@blogs) %>
+<div>
